@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --shadow-color: rgba(0, 0, 0, 0.144);
+      }
+      .frame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Courier New", "Courier", sans-serif;
+      }
+      .center {
+        display: flex;
+        width: 400px;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to top right, #43389f, #4ec6ca);
+        position: relative;
+      }
+      .number-container {
+        color: #fff;
+        position: relative;
+        width: 200px;
+        height: 200px;
+      }
+
+      .one-one {
+        position: absolute;
+        background-color: #fff;
+        width: 20px;
+        height: 35px;
+        transform: rotate(50deg);
+        top: 1%;
+        left: 1%;
+      }
+      .number {
+        position: absolute;
+        background-color: #fff;
+        box-shadow: 2px 2px 5px var(--shadow-color);
+        border-radius: 2px;
+      }
+      .one-two {
+        width: 20px;
+        height: 90px;
+        z-index: 10;
+        top: 1%;
+        left: 8%;
+      }
+      .zero-one,
+      .zero-two {
+        background-color: transparent;
+        width: 45px;
+        height: 45px;
+        border: 22px solid #fff;
+        border-radius: 50%;
+      }
+      .zero-one {
+        left: 12%;
+        z-index: 5;
+      }
+      .zero-two {
+        left: 48%;
+      }
+      .days {
+        text-transform: uppercase;
+        position: absolute;
+        left: 7%;
+        top: 42%;
+        font-size: 4.5rem;
+        font-weight: 900;
+      }
+      .css-challenge {
+        position: absolute;
+        text-transform: uppercase;
+        position: absolute;
+        left: 7%;
+        top: 75%;
+        font-size: 1.35rem;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="center">
+        <div class="number-container">
+          <div class="number one-one"></div>
+          <div class="number one-two"></div>
+          <div class="number zero-one"></div>
+          <div class="number zero-two"></div>
+          <div class="days">Days</div>
+          <div class="css-challenge">CSS Challenge</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

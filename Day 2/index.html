@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .frame {
+        height: 300px;
+        width: 300px;
+        background-color: #3faf82;
+        margin: 0 auto;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      .menu-icon {
+        position: relative;
+        width: 100px;
+        height: 4.5rem;
+      }
+      .no-animation .line {
+        animation: none !important;
+      }
+      .line {
+        position: absolute;
+        background-color: #fff;
+        height: 0.5rem;
+        width: 100px;
+        border-radius: 3px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      }
+      .line-1 {
+        top: 0;
+        animation: line-1-animation-rev 0.7s ease-in-out forwards;
+      }
+      .line-2 {
+        top: 1.5rem;
+        animation: line-2-animation-rev 0.7s ease-in-out forwards;
+      }
+      .line-3 {
+        top: 3rem;
+        animation: line-3-animation-rev 0.7s ease-in-out forwards;
+      }
+      .active .line-1 {
+        animation: line-1-animation 0.7s ease-in-out forwards;
+      }
+      .active .line-2 {
+        animation: line-2-animation 0.7s ease-in-out forwards;
+      }
+      .active .line-3 {
+        animation: line-3-animation 0.7s ease-in-out forwards;
+      }
+      @keyframes line-1-animation {
+        0% {
+          transform: translate3d(0, 0, 0) rotate(0deg);
+        }
+        50% {
+          transform: translate3d(0, 1.5rem, 0) rotate(0deg);
+        }
+        100% {
+          transform: translate3d(0, 1.5rem, 0) rotate(45deg);
+        }
+      }
+      @keyframes line-2-animation {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+      }
+      @keyframes line-3-animation {
+        0% {
+          transform: translate3d(0, 0, 0) rotate(0deg);
+        }
+        50% {
+          transform: translate3d(0, -1.5rem, 0) rotate(0deg);
+        }
+        100% {
+          transform: translate3d(0, -1.5rem, 0) rotate(135deg);
+        }
+      }
+      @keyframes line-1-animation-rev {
+        0% {
+          transform: translate3d(0, 1.5rem, 0) rotate(45deg);
+        }
+        50% {
+          transform: translate3d(0, 1.5rem, 0) rotate(0deg);
+        }
+        100% {
+          transform: translate3d(0, 0, 0) rotate(0);
+        }
+      }
+      @keyframes line-3-animation-rev {
+        0% {
+          transform: translate3d(0, -1.5rem, 0) rotate(135deg);
+        }
+        50% {
+          transform: translate3d(0, -1.5rem, 0) rotate(0deg);
+        }
+        100% {
+          transform: translate3d(0, 0, 0) rotate(0deg);
+        }
+      }
+      @keyframes line-2-animation-rev {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="center">
+        <div class="menu-icon no-animation">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let icon = document.querySelector(".menu-icon");
+      icon.addEventListener("click", () => {
+        icon.classList.toggle("active");
+        icon.classList.remove("no-animation");
+      });
+    </script>
+  </body>
+</html>
