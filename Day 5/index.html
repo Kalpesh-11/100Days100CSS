@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .frame {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 400px;
+                height: 400px;
+                margin-top: -200px;
+                margin-left: -200px;
+                border-radius: 2px;
+                box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                background: #fff;
+                color: #333;
+                font-family: "Open Sans", Helvetica, sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                background: #42a7a1;
+            }
+
+            .card {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: red;
+                width: 75%;
+                height: 60%;
+                border-radius: 5px;
+                box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
+                overflow: hidden;
+            }
+            .header {
+                height: 20%;
+                width: 88%;
+                padding: 5% 6%;
+                background: #f1ba64;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                color: #fff;
+            }
+            .report {
+                height: 70%;
+                width: 100%;
+                background: #fff;
+            }
+            .title,
+            .type,
+            .date,
+            .amount {
+                width: 40%;
+            }
+            .type,
+            .amount {
+                text-align: end;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="frame">
+            <div class="card">
+                <div class="header">
+                    <div class="title big">Weekly Report</div>
+                    <div class="type small">Revenue</div>
+                    <div class="date small">01 Feb - 07 Feb</div>
+                    <div class="amount big">$3621.79</div>
+                </div>
+                <div class="report"></div>
+            </div>
+        </div>
+    </body>
+</html>

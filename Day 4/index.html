@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #e56262;
+            color: #333;
+            font-family: "Open Sans", Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .dot {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 8px 10px 15px rgba(0, 0, 0, 0.3);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .dot-1 {
+            width: 100px;
+            height: 100px;
+            z-index: 1;
+            animation: dot-animation-1 3s cubic-bezier(0.21, 0.98, 0.6, 0.99)
+                infinite alternate;
+            /* background-color: red; */
+        }
+        .dot-2 {
+            width: 70px;
+            height: 70px;
+            z-index: 3;
+            animation: dot-animation-2 3s cubic-bezier(0.21, 0.98, 0.6, 0.99)
+                infinite alternate;
+
+            /* background-color: green; */
+        }
+        .dot-3 {
+            width: 40px;
+            height: 40px;
+            z-index: 10;
+            animation: dot-animation-3 3s cubic-bezier(0.21, 0.98, 0.6, 0.99)
+                infinite alternate;
+
+            /* background-color: yellow; */
+        }
+        @keyframes dot-animation-1 {
+            0%,
+            10% {
+                transform: translate(-50%, -50%) scale(0);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        @keyframes dot-animation-2 {
+            0%,
+            40% {
+                transform: translate(-50%, -50%) scale(0);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        @keyframes dot-animation-3 {
+            0%,
+            80% {
+                transform: translate(-50%, -50%) scale(0);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    </style>
+    <body>
+        <div class="frame">
+            <div class="center">
+                <div class="dot dot-1"></div>
+                <div class="dot dot-2"></div>
+                <div class="dot dot-3"></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        .frame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            margin-top: -200px;
+            margin-left: -200px;
+            border-radius: 2px;
+            box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #fff;
+            color: #333;
+            font-family: "Open Sans", Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #272c34;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .circle {
+            background-color: red;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            animation: sun-down 4s cubic-bezier(0.28, 0.37, 0.74, 0.45) infinite;
+        }
+        .sky {
+            background-color: #7ddffc;
+            height: 200px;
+            position: relative;
+        }
+        .sun {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 85%;
+            left: -15%;
+            background-color: #ffef00;
+            border-radius: 50%;
+            transform-origin: 480% 150%;
+            animation: sun 4s cubic-bezier(0.28, 0.37, 0.74, 0.45) infinite;
+        }
+        .triangle-side-1 {
+            position: absolute;
+            background: #f4f4f4;
+            height: 100px;
+            width: 100px;
+            bottom: -5%;
+            left: 32%;
+            transform: translateX(-50%);
+            clip-path: polygon(100% 0, 0 90%, 100% 100%);
+            animation: triangle-side-2 4s cubic-bezier(0.28, 0.37, 0.74, 0.45)
+                infinite;
+        }
+        .triangle-side-2 {
+            position: absolute;
+            background: #dddada;
+            height: 100px;
+            width: 100px;
+            bottom: -5%;
+            left: 65%;
+            transform: translateX(-50%);
+            clip-path: polygon(0 0, 0 100%, 100% 90%);
+            animation: triangle-side-2 4s cubic-bezier(0.28, 0.37, 0.74, 0.45)
+                infinite reverse;
+        }
+        .ground {
+            background-color: #f0de75;
+            height: 100px;
+            position: relative;
+        }
+        .shadow {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.2);
+            height: 65px;
+            width: 300px;
+            left: 65%;
+            top: 0%;
+            transform: translate(-50%, 0);
+            clip-path: polygon(100% 46%, 0 0, 65% 0);
+            animation: shadow 4s cubic-bezier(0.28, 0.37, 0.74, 0.45) infinite;
+        }
+        @keyframes shadow {
+            0% {
+                clip-path: polygon(100% 46%, 0 0, 65% 0);
+            }
+            10% {
+                clip-path: polygon(75% 80%, 0 0, 66% 0);
+            }
+            50% {
+                clip-path: polygon(40% 50%, 0 0, 65% 0);
+            }
+            100% {
+                clip-path: polygon(0% 100%, 0 0, 66% 0);
+            }
+        }
+        @keyframes sun {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(180deg);
+            }
+        }
+        @keyframes triangle-side-1 {
+            0% {
+                background-color: #9a9a9a;
+            }
+            50% {
+                background-color: #e7e7e7;
+            }
+            80% {
+                background-color: #dddada;
+            }
+            100% {
+                background-color: #9a9a9a;
+            }
+        }
+        @keyframes triangle-side-2 {
+            0% {
+                background: #b2b2b2;
+            }
+            10% {
+                background: #e7e7e7;
+            }
+            50% {
+                background: #e7e7e7;
+            }
+            70% {
+                background: #dddada;
+            }
+            100% {
+                background: #b2b2b2;
+            }
+        }
+
+        @keyframes sun-down {
+            0% {
+                opacity: 0.2;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            50% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            95% {
+                opacity: 0.2;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <body>
+        <div class="frame">
+            <div class="center">
+                <div class="circle">
+                    <div class="sky">
+                        <div class="sun"></div>
+                        <div class="triangle-side-1"></div>
+                        <div class="triangle-side-2"></div>
+                    </div>
+
+                    <div class="ground">
+                        <div class="shadow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
